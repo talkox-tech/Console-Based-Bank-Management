@@ -31,8 +31,8 @@ public class Main {
                 case 3 -> withdraw(scanner);
                 case 4 -> transfer(scanner);
                 case 5 -> getStatement(scanner);
-                case 6 -> accountlist(scanner);
-                case 7 -> searchAccount(scanner);
+                case 6 -> accountlist(scanner, bankservice);
+                case 7 -> searchAccount(scanner );
                 case 0 -> running = false;
             }
 
@@ -43,14 +43,14 @@ public class Main {
     private static void openAccount(Scanner scanner, Bankservice bankservice) {
         System.out.println("Enter Customer Name: ");
         String customer = scanner.nextLine().trim();
-        System.out.println("Enter email id; ");
-        String email = scanner.nextLine().trim();
+        System.out.println("Enter email id: ");
+       // String email = scanner.nextLine().trim();
         System.out.println("Enter Account Type (CURRENT/SAVING): ");
-        String type = scanner.nextLine().trim();
+     //   String type = scanner.nextLine().trim();
         System.out.println("Enter initial amount to deposit (optional Eg. for blank enter 0): ");
-        String initialAmount = scanner.nextLine().trim();
-        Double amount = Double.valueOf(initialAmount);
-        bankservice.openAccount(customer, email, type );
+      //  String initialAmount = scanner.nextLine().trim();
+      //  Double amount = Double.valueOf(initialAmount);
+      //  bankservice.openAccount(customer, email, type );
     }
 
     private static void deposit(Scanner scanner) {
@@ -69,8 +69,10 @@ public class Main {
 
     }
 
-    private static void accountlist(Scanner scanner) {
-
+    private static void accountlist(Scanner scanner, Bankservice bankservice) {
+        bankservice.listAccount().forEach(a ->{
+            System.out.println(a.getAccountNumber() + " | " + a.getAccountType() + " | " + a.getbalance());
+        });
     }
 
     private static void searchAccount(Scanner scanner) {
