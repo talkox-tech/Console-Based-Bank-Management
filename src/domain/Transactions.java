@@ -17,6 +17,12 @@ public Transactions(String id, Type transaction ,String accountNumber, Double am
     this.amount = amount;
     this.timestamp = timestamp;
     this.note= note;
+    }
+        public String getAccountNumber(){
+        return accountNumber;
+    }
+        public void setAccountNumber(){
+            this.accountNumber = accountNumber;
+        }
 
-}
 }

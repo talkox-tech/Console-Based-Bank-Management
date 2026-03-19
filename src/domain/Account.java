@@ -6,6 +6,8 @@ public class Account {
     private Double balance;
     private String accountType;
 
+
+
     public Account(String accountNumber, String customerID, Double balance, String accountType) {
         this.accountNumber = accountNumber;
         this.customerID = customerID;
@@ -14,9 +16,11 @@ public class Account {
     }
 
     public String getAccountNumber(){
+
         return accountNumber;
     }
     public String getcustomerID(){
+
         return  customerID;
     }
     public Double getbalance (){
@@ -25,4 +29,11 @@ public class Account {
     public String getAccountType(){
         return accountType;
     }
+    public void setBalance(Double balance) {
+        this.balance = balance;
+    }
+    public void setAccountNumber(){
+        this.accountNumber= accountNumber;
+    }
+
 }
